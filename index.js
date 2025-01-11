@@ -41,7 +41,7 @@ import logger from './logger.js';
       const data = `${email} ${password}\n`;
       const filePath = path.join('account.txt');
       fs.appendFileSync(filePath, data, 'utf8');
-      logger.info('success save register data\n');
+      logger.info(`success saved register data\n`);
       i++;
       // console.log('\n');
     }

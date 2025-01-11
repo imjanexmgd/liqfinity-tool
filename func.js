@@ -1,5 +1,6 @@
 import axios from 'axios';
 import delay from 'delay';
+import logger from './logger.js';
 
 export const registerFunc = async (email, password, reffCode) => {
   let retries = 3;
@@ -39,15 +40,12 @@ export const registerFunc = async (email, password, reffCode) => {
       lastError = error;
       retries--;
       if (retries > 0) {
-        console.log(`Retrying... ${retries} attempts left`);
+        logger.info(`Retrying... ${retries} attempts left`);
         await delay(1000);
       }
-
-      throw error;
     }
   }
 
-  // Jika semua percobaan gagal, lempar error terakhir
   throw lastError;
 };
 export async function loginFunc(email, password) {
