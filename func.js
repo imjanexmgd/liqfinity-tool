@@ -13,6 +13,8 @@ export const registerFunc = async (email, password, reffCode) => {
           password: password,
           email: email,
           referrerCode: reffCode ? reffCode : 'U6889',
+          turnstileToken:
+            '0.uM1b-pgRdOEed4MIpS8E49aqs80SnE9NhMiAbw45Sq2G3uGRAwEy1M_-LeBQr8STqeUeuFOqopotsMH0Zd4cDuQroZLMEQsIP226qylYqklz79W3DiBV3ErKYTVoL_CvG7aaTG75ZXlopHxjCdazRh_wdqVqnn8sHQ0nUWZDO4HbeezDtGscXK5TGEwOK_gKE8jOuG0KQDQjCw8qrbnxy3S2yOGq8BNRpyUKKgNkGGPogJs4lJ3z27zyPKhliEIwRrofBw3pOHjxM1CyZIkTwn53d0BDCaAT38enFx-3qDifWXmC3CTaWDaG5LzwC7MJIqD1CizZn6pponpbhofsiAab5M16laR0cWatoprc0v_S0XDFipEm4nYTxYT9eLU3sDbylKpGNutVmxUMaoMb61GZ3LsRo55-NB0WtcSN0auG077HOn5fHwAStMwXUWzbnW9M9Lf8MjU-rA_XO9TRS9ETRfG_CcNDG5l3uTFTnMSFs6f7wlDfDG1XcQtngLatxG5Tm2kB19moyBjpw_8NDtHWz850gI6a7m0TrkFaJsr-h87-wwxzxHAR_fsEJo4WgP4ouCEEzBb2GT1JJwqXfavnDpeBVjy5_k-UCUYkZPnCw6n0BLUKO4Km137_oSyzluSF06B3ky1r0rsYWEUNt9hh5mUCF0Iv71YfPSyK-AAvD3PQthIZMDW5Y2-1_o9rDfteLEpKqKO70lF6xWu7eJ2BQ0l8Toxx8sFq6lrkVz9OTHGmDIPyEQD82y-7pMhbSbQ8flH_A-iTVA27H7kl2McAFYmitmKnlHmMKDLn8WQ.NW0q2BjEAcngxJdXKFDIdA.ef40b0cf16c64e2c87d1785071adf754af032608468ece7ea4bddb1ea03bf7f1',
         },
         {
           headers: {
@@ -40,6 +42,8 @@ export const registerFunc = async (email, password, reffCode) => {
         console.log(`Retrying... ${retries} attempts left`);
         await delay(1000);
       }
+      console.log(error);
+      throw error;
     }
   }
 
