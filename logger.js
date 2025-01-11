@@ -3,7 +3,7 @@ import pino from 'pino';
 const prettyOptions = {
   colorize: true,
   levelFirst: true,
-  translateTime: 'HH:MM:ss',
+  //   translateTime: 'HH:MM:ss',
   ignore: 'pid,hostname',
 };
 
