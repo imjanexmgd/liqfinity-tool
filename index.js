@@ -32,7 +32,8 @@ import logger from './logger.js';
       try {
         register = await registerFunc(email, password, reffCode);
       } catch (error) {
-        logger.error(`email ${email} error:(`);
+        let message = error?.response?.statusText || 'unkown error';
+        logger.error(`email ${email} register error ${message}`);
         // console.log();
         continue;
       }

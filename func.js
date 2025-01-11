@@ -42,7 +42,7 @@ export const registerFunc = async (email, password, reffCode) => {
         console.log(`Retrying... ${retries} attempts left`);
         await delay(1000);
       }
-      console.log(error);
+
       throw error;
     }
   }
